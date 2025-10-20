@@ -1,46 +1,44 @@
-from flask import Flask, render_template,request, redirect, url_for, flash
+from flask import Flask, render_template, request, flash
+
 app = Flask(__name__)
-app.config['SECRET_KEY']='una_clave_secreta_muy_larga_y_dificil_de_adivinar'
+
 @app.route('/')
 def inicio():
-    return render_template('inicio.html')
+    return render_template('inicio.html', title="Inicio")
 
-@app.route('/animales')
-def animales_exoticos():
-    return render_template('animales_exoticos.html')
+@app.route('/animales_exoticos')
+def animales():
+    return render_template('animales_exoticos.html', title="Animales Exóticos")
 
-@app.route('/vehiculos')
-def vehiculos_antiguos():
-    return render_template('vehiculos_antiguos.html')
+@app.route('/vehiculos_antiguos')
+def vehiculos():
+    return render_template('vehiculos_antiguos.html', title="Vehículos Antiguos")
 
-@app.route('/maravillas')
-def maravillas_del_mundo():
-    return render_template('maravillas_del_mundo.html')
+@app.route('/maravillas_del_mundo')
+def maravillas():
+    return render_template('maravillas_del_mundo.html', title="Las Maravillas del Mundo")
 
-@app.route('/acerca')
+@app.route('/acerca_de')
 def acerca_de():
-    return render_template('acerca_de.html')
+    return render_template('acerca_de.html', title="Acerca de...")
 
-@app.route('/formulario', methods = ("GET","POST"))
-def formulario():
-    error=None
+@app.route('/sesion', methods=["GET", "POST"])
+def sesion():
     if request.method == "POST":
         nombre = request.form["nombre"]
         apellido = request.form["apellido"]
-        fechadenacimiento = request.form ["fechadenacimiento"]
-        genero = request.form ["genero"]
-        email = request.form ["email"]
+        fechadenacimiento = request.form["fechadenacimiento"]
+        genero = request.form["genero"]
+        email = request.form["email"]
         password = request.form["password"]
-        
-    if password != password:
-            error ="La contraseña no coincide"
-            if error != None:
-                flash(error)
-                return render_template('platillainicio.html')
-            else:
-                flash(f"¡Registro exitoso para el usuario:{nombre}")
-                return render_template("inicio.html")
-    return render_template('platillainicio.html')
-           
+        repassword = request.form["repassword"]
+
+        if password != repassword:
+            flash("Las contraseñas no coinciden", "danger")
+        else:
+            flash(f"Registro exitoso para {nombre} {apellido}", "success")
+
+    return render_template("sesion.html")
+
 if __name__ == '__main__':
     app.run(debug=True)

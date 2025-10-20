@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Formulario{% endblock %}
+{% block content %}
+        <h1 class="text-center text-primary">facebook</h1>
+        <div class="row justify-content-center">
+            <div class="col-mb-6 col-lg-6">
+                <div class="card p-4 shadow">
+                    <div class="row col-mb-2 mx-auto">
+                        <div class="card-body">
+                            <div class="card-header mb-6">
+                                <h1 class="text-center">Crea una cuenta</h1>
+                                <p class="text-center">Es rápido y fácil</p>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="row col-mb-2 mx-auto">
+                        <form>
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <input type="text" class="form-control" id="Nombre" placeholder="Nombre" required minlength="3" maxlength="100" value ="{{request.form.get("nombre", ' ')}}">
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" id="Apellido" placeholder="Apellido">
+                                </div>
+                            </div>
