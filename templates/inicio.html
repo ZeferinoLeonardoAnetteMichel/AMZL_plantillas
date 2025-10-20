@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Desarrollo Plantilla Base{% endblock %}
+{% block content %}
+<h1 class="text-bg-dark p-3 mb-4 text-center">Desarrollo Plantilla Base</h1>
+<h1 class="text-center text-secondary">
+    ¿QUIERES DESCUBRIR UN POCO DEL MUNDO?
+</h1>
+<div id="carouselExampleIndicators" class="carousel slide">
+<div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+</div>
+<div class="carousel-inner">
+    <div class="carousel-item active">
+    <img src="static\img/imagen.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+    <img src="static\img/images.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+    <img src="static\img/imag.png" class="d-block w-100" alt="...">
+    </div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+</button>
+</div>
+<h4 class="text-center">
+El mundo es muy maravilloso,ya que tenemos grandes faunas del reino animal, al igual que historias.
+</h4>
+<h4 class=" text-center">
+Te mostrare los animales exoticos que tal vez nunca hayas visto, las historias de los primeros vehiculos de cada marca de 
+carro que conoces, asi como tambien la maravillas del mundo que tal vez ya has oido hablar de ellas,
+espero que conozcas datos nuevos y relevantes de lo que estes buscando.</h4>
+
+<h1 class="text-secondary p-3 mb-4 text-center">¡DISFRUTA DE LA EXPERIENCIA Y CONOCE NUEVAS COSAS!</h1>
+{% endblock %}
